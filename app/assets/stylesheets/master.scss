@@ -1,7 +1,6 @@
 @import "bootstrap";
 
 body {
-  background: image_url('dust_scratches.png');
   font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
   color: #1d71f7
 }
@@ -19,8 +18,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin:0;
-  padding:0;
+  margin: 20px;
+  padding: 20px;
 }
 
 .sign_up {
