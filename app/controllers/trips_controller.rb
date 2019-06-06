@@ -10,8 +10,12 @@ class TripsController < ApplicationController
   end
 
   def create
-    current_user.trip.create(trip_params)
+    Trip.create(trip_params)
     redirect_to root_path
+  end
+
+  def show
+    @trip = Trip.find(params[:id])
   end
 
   private
