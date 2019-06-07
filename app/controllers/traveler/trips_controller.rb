@@ -7,7 +7,11 @@ class Traveler::TripsController < ApplicationController
 
   def create
     @trip = current_user.trips.create(trip_params)
-    redirect_to traveler_trip_path(@trip)
+    if @trip.valid?
+      redirect_to traveler_trip_path(@trip)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -17,7 +21,6 @@ class Traveler::TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:title, :description, :location)
+    params.require(:trip).permit(:name, :description, :address)
   end
-
 end
