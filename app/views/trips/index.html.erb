@@ -1,6 +1,7 @@
 <% @trips.each do |trip| %>
   <div class="booyah-box col-10 offset-1">
-    <h1><%= link_to trip.name, traveler_trip_path(trip) %></h1><br />
+    <h1><%= link_to trip.name, traveler_trip_path(trip) %></h1>
+    <br />
     <i><%= trip.address %></i><br />
     <p><%= trip.description %></p><br />
 
