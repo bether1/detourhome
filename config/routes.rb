@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'static_pages#index'
+  resources :trips, only: [:index, :show]
   namespace :traveler do
     resources :trips, only: [:new, :create, :show]
   end

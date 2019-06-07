@@ -1,15 +1,18 @@
-<% @trips.each do |trip| %>
-  <div class="booyah-box col-10 offset-1">
-    <h1><%= link_to trip.name, traveler_trip_path(trip) %></h1>
-    <br />
-    <i><%= trip.address %></i><br />
-    <p><%= trip.description %></p><br />
-
-    <% if trip.user.present? %>
-      <small><%= trip.user.email %></small>
-    <% end %>
-  </div>
-
+<div class="booyah-box-b col-10 offset-1">
+  <h1 class="text-center">All My Journies</h1>
   <hr />
 
-<% end %>
+  <% @trips.each do |trip| %>
+    <h2 class="text-center"><%= trip.name %></h2>
+    <br />
+    <div class="row">
+      <div class="col-sm-8 col-12">
+        <%= trip.description %>
+      </div>
+      <div class="col-sm-4 col-12 text-center">
+        <%= link_to 'Button', '#', class: 'btn btn-primary btn-large' %>
+      </div>
+    </div>
+    <br class="clr" />
+  <% end %>
+</div>
