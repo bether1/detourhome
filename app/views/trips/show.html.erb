@@ -1,6 +1,18 @@
-<div class="booyah-box col-10 offset-1">
+<div class="booyah-box-b col-10 offset-1">
   <h1><%= @trip.name %></h1>
-  <i><%= @trip.address %></i>
   <br />
-  <p><%= @trip.description %></p>
+  <div class="col-sm-4 col-12">
+    <%= @trip.address %>
+  </div>
+
+  <div class="col-sm-8 col-12">
+  <br />
+    <%= @trip.description %>
+  </div>
+
+  <% if current_user && current_user == @trip.user %>
+    <br />
+    <br />
+    <%= link_to 'Administer', traveler_trip_path(@trip), class: 'btn btn-danger btn-large' %>
+  <% end %>
 </div>

@@ -3,14 +3,16 @@
   <hr />
 
   <% @trips.each do |trip| %>
-    <h2 class="text-center"><%= trip.name %></h2>
+    <h2 class="text-center">
+      <%= link_to trip.name, trip_path(trip) %>
+    </h2>
     <br />
     <div class="row">
       <div class="col-sm-8 col-12">
         <%= trip.description %>
       </div>
       <div class="col-sm-4 col-12 text-center">
-        <%= link_to 'Button', '#', class: 'btn btn-primary btn-large' %>
+        <%= link_to 'More Details...', trip_path(trip), class: 'btn btn-primary btn-large' %>
       </div>
     </div>
     <br class="clr" />
