@@ -1,7 +1,7 @@
 class Traveler::DestinationsController < ApplicationController
 
   def new
-    @trip = Trip.find(params[:trip_id])
+    @trip = Trip.find(params[:id])
     @destination = Destination.new
   end
 

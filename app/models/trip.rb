@@ -4,5 +4,4 @@ class Trip < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   def show
-  end
 end
