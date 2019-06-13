@@ -2,4 +2,22 @@
 <div class="booyah-box-b col-10 offset-1">
   <h1 class="text-center"><%= @trip.name %></h1>
   <h2 class="text-center"><%= @trip.description %></h2>
+  <br />
+
+  <div class="text center">
+    <%= link_to 'Preview Trip Page', trip_path(@trip), class: 'btn btn-primary btn-lg'%>
+  </div>
+  <br />
+  <div class="text center">
+    <%= link_to 'Add a New Destination', new_traveler_trip_destination_path(@trip), class: 'btn btn-primary btn-lg' %>
+  </div>
+
+    <ul>
+    <% @trip.destinations.each do |destination| %>
+      <li>
+        <%= destination.name %>
+      </li>
+    <% end %>
+  </ul>
 </div>
+
