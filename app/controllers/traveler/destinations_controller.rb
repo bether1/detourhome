@@ -11,6 +11,10 @@ class Traveler::DestinationsController < ApplicationController
     redirect_to traveler_trip_path(@trip)
   end
 
+  def show
+    @destination = Destination.find(params[:id])
+  end
+
 
   private
 

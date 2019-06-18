@@ -1,22 +1,33 @@
 <br />
 <div class="booyah-box-b col-10 offset-1">
+  <h6 class="text-center"><%= 'admin page' %>
   <h1 class="text-center"><%= @trip.name %></h1>
-  <h2 class="text-center"><%= @trip.description %></h2>
-  <br />
+  <hr />
+  <h5 class="text-center"><%= @trip.description %></h5>
+  <hr />
 
-  <div class="text center">
-    <%= link_to 'Preview Trip Page', trip_path(@trip), class: 'btn btn-primary btn-lg'%>
-  </div>
+  <h6 class="text-center"><'insert map here with all destinations'></h6>
+
+  <hr />
   <br />
-  <div class="text center">
-    <%= link_to 'Add a New Destination', new_traveler_trip_destination_path(@trip), class: 'btn btn-primary btn-lg' %>
+  <div class="row col-10 offset-1 text-center">
+    <div class="col-12 col-sm text-center">
+      <%= link_to 'Preview Trip Page', trip_path(@trip), class: 'btn btn-primary btn-sm'%>
+    </div>
+    <br />
+    <div class="col-12 col-sm text-center ">
+      <%= link_to 'Add a New Destination', new_traveler_trip_destination_path(@trip), class: 'btn btn-primary btn-sm' %>
+      <br />
+      <br />
+    </div>
   </div>
 
-    <ul>
+  <ul>
     <% @trip.destinations.each do |destination| %>
-      <li>
-        <%= destination.name %>
-      </li>
+      <div class="row booyah-box-c col-12 col-sm"> 
+        <h5 class="col-12 text-center"> <%= link_to destination.name, traveler_trip_destination_path(@trip) %></h5>
+      </div>
+        <br />
     <% end %>
   </ul>
 </div>
