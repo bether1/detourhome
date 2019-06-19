@@ -25,7 +25,7 @@
   <ul>
     <% @trip.destinations.each do |destination| %>
       <div class="row booyah-box-c col-12 col-sm"> 
-        <h5 class="col-12 text-center"> <%= link_to destination.name, traveler_trip_destination_path(@trip) %></h5>
+        <h5 class="col-12 text-center"> <%= link_to destination.name, traveler_trip_destination_path(@trip, destination) %></h5>
       </div>
         <br />
     <% end %>
