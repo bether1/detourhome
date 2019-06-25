@@ -1,0 +1,2 @@
+module TestTripsHelper
+end
