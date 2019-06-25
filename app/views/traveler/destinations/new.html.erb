@@ -6,6 +6,7 @@
   <%= simple_form_for @destination, url: traveler_trip_destinations_path(@trip) do |f|%>
     <%= f.input :name %>
     <%= f.input :address %>
+    <%= f.input :photo %>
     <br />
     <%= f.submit "Add Destination", class: 'btn btn-primary' %>
     <br />

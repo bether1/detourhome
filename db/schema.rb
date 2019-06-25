@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_13_213702) do
+ActiveRecord::Schema.define(version: 2019_06_25_214916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,27 @@ ActiveRecord::Schema.define(version: 2019_06_13_213702) do
     t.integer "journal_id"
     t.float "latitude"
     t.float "longitude"
+    t.string "picture"
+    t.string "photo"
+  end
+
+  create_table "journals", force: :cascade do |t|
+    t.text "entry"
+    t.integer "user_id"
+    t.integer "destination_id"
+    t.integer "trip_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["destination_id"], name: "index_journals_on_destination_id"
+    t.index ["user_id", "destination_id"], name: "index_journals_on_user_id_and_destination_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "picture"
+    t.integer "user_id"
+    t.integer "photo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "trips", force: :cascade do |t|

@@ -13,13 +13,15 @@ class Traveler::DestinationsController < ApplicationController
 
   def show
     @destination = Destination.find(params[:id])
+    @journal = Journal.new
+    @photo = Photo.new
   end
 
 
   private
 
   def destination_params
-    params.require(:destination).permit(:name, :address)
+    params.require(:destination).permit(:name, :address, :photo)
   end
 end
 
