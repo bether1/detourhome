@@ -43,6 +43,18 @@
 
 <div class="clear"></div>
 
+<%= simple_form_for @photo, url: traveler_trip_destination_photos_path(@trip, @destination) do |f| %>
+  <div class="booyah-box-b">
+    <%= f.input :picture %>
+    <%= f.submit "Add Photo", class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<div class="booyah-box-b">
+  <% @destination.photos.each do |photo| %>
+    <%= image_tag @destination.photo, class: 'img-fluid' %>
+  <% end %>
+</div>
 
 <%= simple_form_for @journal, url: traveler_trip_destination_journals_path(@trip, @destination) do |f| %>
   <div class="booyah-box-b">

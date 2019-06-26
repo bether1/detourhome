@@ -22,7 +22,7 @@ class Traveler::DestinationsController < ApplicationController
   private
 
   def destination_params
-    params.require(:destination).permit(:name, :address, :photo)
+    params.require(:destination).permit(:name, :address, :picture)
   end
 end
 
