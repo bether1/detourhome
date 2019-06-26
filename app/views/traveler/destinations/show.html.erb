@@ -32,7 +32,7 @@
     </script>
 
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP5jxE9fMrzVSvBgT_dXGzDFkhkmYx3H8&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAU5Q08wm1uiURKUNdBr8c8ecShur0G7so&callback=initMap">
     </script>
   </body>
   </html>
@@ -44,8 +44,10 @@
 <div class="clear"></div>
 
 <%= simple_form_for @photo, url: traveler_trip_destination_photos_path(@trip, @destination) do |f| %>
-    <%= f.input :picture %>
-    <%= f.submit "Add Photo", class: 'btn btn-primary' %>
+    <div class="booyah-box-b">
+      <%= f.input :photo %>
+      <%= f.submit "Add Photo", class: 'btn btn-primary' %>
+    </div>
 <% end %>
 
 
@@ -68,3 +70,10 @@
   <% end %>
 </div>
 
+<div class="booyah-box-b">
+  <% @destination.photos.each do |photo| %>
+    <% if @destination.photo %>
+      <%= image_tag @destination.photo, class: 'img-fluid' %>
+    <% end %>
+  <% end %>
+</div>
