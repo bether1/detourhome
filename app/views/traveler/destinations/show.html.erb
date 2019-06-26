@@ -44,10 +44,8 @@
 <div class="clear"></div>
 
 <%= simple_form_for @photo, url: traveler_trip_destination_photos_path(@trip, @destination) do |f| %>
-  <div class="booyah-box-b">
     <%= f.input :picture %>
     <%= f.submit "Add Photo", class: 'btn btn-primary' %>
-  </div>
 <% end %>
 
 
@@ -70,8 +68,3 @@
   <% end %>
 </div>
 
-<div class="booyah-box-b">
-  <% @destination.photos.each do |photo| %>
-    <%= image_tag photo.picture.url, class: 'img-fluid' %>
-  <% end %>
-</div>
