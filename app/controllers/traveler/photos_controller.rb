@@ -12,5 +12,4 @@ class Traveler::PhotosController < ApplicationController
   def photo_params
     params.require(:photo).permit(:picture)
   end
-
 end
