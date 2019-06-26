@@ -52,14 +52,13 @@
 <% end %>
 
 
-
-
-
-
-
-
-
-
-
-
-
+<div class="booyah-box-b">
+  <% @destination.journals.each do |journal| %>
+  <div>
+    <blockquote>
+      <b><%= journal.entry %></b>
+        <small><%= journal.created_at %></small>
+    </blockquote>
+  </div>
+  <% end %>
+</div>

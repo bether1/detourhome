@@ -3,8 +3,8 @@ class Traveler::JournalsController < ApplicationController
 
   def create
     @destination = Destination.find(params[:destination_id])
-    @destination.journals.create
-    redirect_to traveler_trip_destination_path(@destination)
+    @destination.journals.create(journal_params.merge(user: current_user))
+    redirect_to traveler_trip_destination_path(params[:trip_id], params[:destination_id])
   end
 
   private
