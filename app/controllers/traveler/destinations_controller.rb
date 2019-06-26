@@ -13,6 +13,7 @@ class Traveler::DestinationsController < ApplicationController
 
   def show
     @destination = Destination.find(params[:id])
+    @trip = Trip.find(params[:trip_id])
     @journal = Journal.new
     @photo = Photo.new
   end

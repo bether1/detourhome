@@ -44,20 +44,12 @@
 <div class="clear"></div>
 
 
-<%= simple_form_for @journal, url: "#" do |f| %>
+<%= simple_form_for @journal, url: traveler_trip_destination_journals_path(@trip, @destination) do |f| %>
   <div class="booyah-box-b">
     <%= f.input :entry %>
     <%= f.submit "Add a Journal Entry", class: 'btn btn-primary' %>
   </div>
 <% end %>
-
-<%= simple_form_for @photo, url: "#" do |f| %>
-  <div class="booyah-box-b">
-    <%= f.input :picture %>
-    <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
-  </div>
-<% end %>
-
 
 
 
