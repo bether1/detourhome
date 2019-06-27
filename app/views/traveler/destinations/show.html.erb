@@ -1,83 +1,84 @@
-<div class="booyah-box-b col-10 offset-1">
-  <h1><%= "Destination Page" %></h1>
+<div class="booyah-box-b">
+  <div class="booyah-box-b col-10 offset-1 text-center">
+    <h4><%= @trip.name %><br /><%= @trip.description %></h4>
+    <hr />
+    <h3><div class="col-sm-8 offset-2 text-center"><%= link_to @destination.name, traveler_trip_destination_path, class: 'text-center' %></div></h3>
+  </div>
 
+  <div class="booyah-box-b col-10 offset-1 text-center">
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Simple Map</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+        <style>
+          /* Always set the map height explicitly to define the size of the div
+           * element that contains the map. */
+          /* Optional: Makes the sample page fill the window. */
+          html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }
+        </style>
+      </head>
+      <body>
+        <div id="map"></div>
+        <script>
+          var map;
+          function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: <%= @destination.latitude %>, lng: <%= @destination.longitude %>},
+              zoom: 8
+            });
+          }
+        </script>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="map"></div>
-    <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: <%= @destination.latitude %>, lng: <%= @destination.longitude %>},
-          zoom: 8
-        });
-      }
-    </script>
-
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOE-HGxJJ-LkvmoPg55T4NfiHutZ_fZG0&callback=initMap">
-    </script>
-  </body>
-  </html>
-
-    <h3><%= link_to @destination.name, traveler_trip_destination_path, class: 'row text-center' %></h3>
-
-
-
-<div class="clear"></div>
-
-<%= simple_form_for @photo, url: traveler_trip_destination_photos_path(@trip, @destination) do |f| %>
-    <div class="booyah-box-b">
-      <%= f.input :photo %>
-      <%= f.submit "Add Photo", class: 'btn btn-primary' %>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOE-HGxJJ-LkvmoPg55T4NfiHutZ_fZG0&callback=initMap">
+        </script>
+      </body>
+      </html>
     </div>
-<% end %>
 
+  <div class="clear"></div>
 
-<%= simple_form_for @journal, url: traveler_trip_destination_journals_path(@trip, @destination) do |f| %>
-  <div class="booyah-box-b">
-    <%= f.input :entry %>
-    <%= f.submit "Add a Journal Entry", class: 'btn btn-primary' %>
-  </div>
-<% end %>
+  <div class="booyah-box-b col-10 offset-1 text-center">
 
-
-<div class="booyah-box-b">
-  <% @destination.journals.each do |journal| %>
-  <div>
-    <blockquote>
-      <b><%= journal.entry %></b>
-        <small><%= journal.created_at %></small>
-    </blockquote>
-  </div>
-  <% end %>
-</div>
-
-<% @destination.photos.each do |photo| %>
-  <%= image_tag photo.picture.url %>
-<% end %>
-
-<div class="booyah-box-b">
-  <% @destination.photos.each do |photo| %>
-    <% if @destination.photo %>
-      <%= image_tag @destination.photo, class: 'img-fluid' %>
+    <%= simple_form_for @photo, url: traveler_trip_destination_photos_path(@trip, @destination) do |f| %>
+        <div class="booyah-box-b">
+          <%= f.input :photo %>
+          <%= f.submit "Add Photo", class: 'btn btn-primary' %>
+        </div>
     <% end %>
-  <% end %>
+
+
+    <%= simple_form_for @journal, url: traveler_trip_destination_journals_path(@trip, @destination) do |f| %>
+      <div class="booyah-box-b">
+        <%= f.input :entry %>
+        <%= f.submit "Add a Journal Entry", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+
+
+    <div class="booyah-box-b">
+      <% @destination.journals.each do |journal| %>
+      <div>
+        <blockquote>
+          <b><%= journal.entry %></b>
+            <small><%= journal.created_at %></small>
+        </blockquote>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="booyah-box-b">
+      <% @destination.photos.each do |photo| %>
+        <% if @destination.photo %>
+          <%= image_tag @destination.photo, class: 'img-fluid' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
