@@ -16,7 +16,7 @@
 }
 
 body {
-  background: image_url('bg.png');
+  background: image_url('hero.jpg');
   font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
   color: white
 }
@@ -64,6 +64,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 20px;
   padding: 20px;
+  color: white;
 }
 
 
@@ -82,6 +83,23 @@ h1, h2, h3, h4, h5, h6 {
   background-size: cover;
   height: 600px;
   box-shadow: 0px 3px 8px #2a2a2a;
+  padding: 20px;
+  margin-top: 1px;
+  margin-bottom: 1px
+}
+
+.hero-a {
+  margin-top: 3px;
+  background: image_url('hero.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: cover;
+  box-shadow: 0px 3px 8px #2a2a2a;
+  padding: 20px;
+  margin-top: 1px;
+  margin-bottom: 1px
 }
 
 .frosty {
@@ -128,6 +146,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .clear {
   clear: both;
+}
+
+.link-color {
+  font-color: white;
 }
 
 

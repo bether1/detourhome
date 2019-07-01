@@ -1,34 +1,41 @@
 <br />
-<div class="booyah-box-b col-10 offset-1">
-  <h6 class="text-center"><%= 'admin page' %>
-  <h1 class="text-center"><%= @trip.name %></h1>
-  <hr />
-  <h5 class="text-center"><%= @trip.description %></h5>
-  <hr />
+<div class="booyah-box-c col-10 offset-1">
+  <h6 class="text-center"><%= 'admin page' %></h6>
+</div>
+<div class="booyah-box-b col-10 offset-1 text-center">
+  <div class="hero-a">
+    <div class="booyah-box frosty col-10 offset-1">
+      <h1 class="text-center"><%= @trip.name %></h1>
+      <hr />
+      <h5 class="text-center"><%= @trip.description %></h5>
+      <hr />
 
-  <h6 class="text-center"><'insert map here with all destinations'></h6>
-
-  <hr />
-  <br />
-  <div class="row col-10 offset-1 text-center">
-    <div class="col-12 col-sm text-center">
-      <%= link_to 'Preview Trip Page', trip_path(@trip), class: 'btn btn-primary btn-sm'%>
-    </div>
-    <br />
-    <div class="col-12 col-sm text-center ">
-      <%= link_to 'Add a New Destination', new_traveler_trip_destination_path(@trip), class: 'btn btn-primary btn-sm' %>
-      <br />
-      <br />
+      <h6 class="text-center"><'insert map here with all destinations'></h6>
     </div>
   </div>
 
-  <ul>
-    <% @trip.destinations.each do |destination| %>
-      <div class="row booyah-box-c col-12 col-sm"> 
-        <h5 class="col-12 text-center"> <%= link_to destination.name, traveler_trip_destination_path(@trip, destination) %></h5>
+    <hr />
+    <br />
+    <div class="row col-10 offset-1 text-center">
+      <div class="col-12 col-sm text-center">
+        <%= link_to 'Preview Trip Page', trip_path(@trip), class: 'btn btn-primary btn-sm'%>
       </div>
+      <br />
+      <div class="col-12 col-sm text-center ">
+        <%= link_to 'Add a New Destination', new_traveler_trip_destination_path(@trip), class: 'btn btn-primary btn-sm' %>
         <br />
-    <% end %>
-  </ul>
+        <br />
+      </div>
+    </div>
+
+    <ul>
+      <% @trip.destinations.each do |destination| %>
+        <div class="row frosty booyah-box-c col-12 col-sm"> 
+          <h5 class="col-12 text-center"> <%= link_to destination.name, traveler_trip_destination_path(@trip, destination) %></h5>
+        </div>
+          <br />
+      <% end %>
+    </ul>
+  </div>
 </div>
 

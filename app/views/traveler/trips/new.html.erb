@@ -1,20 +1,22 @@
 <div class="booyah-box-b col-10 offset-1 text-center">
-  <div class="hero">
-    <h1>Go On A New Journey</h1>
+  <div class="hero-a">
+    <div class="booyah-box-b frosty col-10 offset-1 text-center">
+      <h1>Go On A New Journey</h1>
 
-    <%= simple_form_for @trip, url: traveler_trips_path, html: {id: 'newTripForm' }  do |f| %>
-        <div class="frosty col-10 offset-1">
-        <div class="form-inputs">
-          <%= f.input :name %>
-          <%= f.input :description %>
-          <br />
-          <%= f.submit 'Create', class: 'btn btn-primary' %>
+      <%= simple_form_for @trip, url: traveler_trips_path, html: {id: 'newTripForm' }  do |f| %>
+          <div class="frosty col-10 offset-1">
+          <div class="form-inputs">
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <br />
+            <%= f.submit 'Create', class: 'btn btn-primary' %>
+          </div>
         </div>
-      </div>
-    <% end %>
-    <br />
-    <br />
-    <br />
-    <br />
+      <% end %>
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
   </div>
 </div>

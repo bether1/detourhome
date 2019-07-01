@@ -1,11 +1,12 @@
-<div class="booyah-box-b">
-  <div class="booyah-box-b col-10 offset-1 text-center">
-    <h4><%= @trip.name %><br /><%= @trip.description %></h4>
+<div class="hero-a booyah-box-c col-10 offset-1 text-center">
+  <div class="booyah-box-c frosty col-10 offset-1 text-center">
+    <h4><%= @trip.name %></h4>
+    <h6><%= @trip.description %></h6>
     <hr />
     <h3><div class="col-sm-8 offset-2 text-center"><%= link_to @destination.name, traveler_trip_destination_path, class: 'text-center' %></div></h3>
   </div>
 
-  <div class="booyah-box-b col-10 offset-1 text-center">
+  <div class="booyah-box-b frosty col-10 offset-1 text-center">
     <!DOCTYPE html>
     <html>
       <head>
@@ -42,43 +43,44 @@
       </html>
     </div>
 
-  <div class="clear"></div>
+    <div class="clear"></div>
 
-  <div class="booyah-box-b col-10 offset-1 text-center">
+    <div class="booyah-box-b frosty col-10 offset-1 text-center">
 
-    <%= simple_form_for @photo, url: traveler_trip_destination_photos_path(@trip, @destination) do |f| %>
-        <div class="booyah-box-b">
-          <%= f.input :photo %>
-          <%= f.submit "Add Photo", class: 'btn btn-primary' %>
+      <%= simple_form_for @photo, url: traveler_trip_destination_photos_path(@trip, @destination) do |f| %>
+          <div class="booyah-box-b frosty">
+            <%= f.input :photo %>
+            <%= f.submit "Add Photo", class: 'btn btn-primary' %>
+          </div>
+      <% end %>
+
+
+      <%= simple_form_for @journal, url: traveler_trip_destination_journals_path(@trip, @destination) do |f| %>
+        <div class="booyah-box-b frosty">
+          <%= f.input :entry %>
+          <%= f.submit "Add a Journal Entry", class: 'btn btn-primary' %>
         </div>
-    <% end %>
-
-
-    <%= simple_form_for @journal, url: traveler_trip_destination_journals_path(@trip, @destination) do |f| %>
-      <div class="booyah-box-b">
-        <%= f.input :entry %>
-        <%= f.submit "Add a Journal Entry", class: 'btn btn-primary' %>
-      </div>
-    <% end %>
-
-
-    <div class="booyah-box-b">
-      <% @destination.journals.each do |journal| %>
-      <div>
-        <blockquote>
-          <b><%= journal.entry %></b>
-            <small><%= journal.created_at %></small>
-        </blockquote>
-      </div>
       <% end %>
-    </div>
 
-    <div class="booyah-box-b">
-      <% @destination.photos.each do |photo| %>
-        <% if @destination.photo %>
-          <%= image_tag @destination.photo, class: 'img-fluid' %>
+
+      <div class="booyah-box-b frosty ">
+        <% @destination.journals.each do |journal| %>
+        <div>
+          <blockquote>
+            <b><%= journal.entry %></b>
+              <small><%= journal.created_at %></small>
+          </blockquote>
+        </div>
         <% end %>
-      <% end %>
+      </div>
+
+      <div class="booyah-box-b frosty">
+        <% @destination.photos.each do |photo| %>
+          <% if @destination.photo %>
+            <%= image_tag @destination.photo, class: 'img-fluid' %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -1,15 +1,19 @@
-<% @trips.each do |trip| %>
-  <div class="booyah-box col-10 offset-1">
-    <h1><%= link_to trip.name, traveler_trip_path(trip) %></h1>
-    <br />
-    <i><%= trip.address %></i><br />
-    <p><%= trip.description %></p><br />
+<div class="booyah-box-b col-10 offset-1 text-center">
+  <div class="hero-a">
+    <div class="booyah-box-b frosty col-10 offset-1 text-center">
+      <% @trips.each do |trip| %>
+        <div class="booyah-box frosty col-10 offset-1">
+          <h1><%= link_to trip.name, traveler_trip_path(trip) %></h1>
+          <br />
+          <i><%= trip.address %></i><br />
+          <p><%= trip.description %></p><br />
 
-    <% if trip.user.present? %>
-      <small><%= trip.user.email %></small>
-    <% end %>
+          <% if trip.user.present? %>
+            <small><%= trip.user.email %></small>
+          <% end %>
+        </div>
+        <hr />
+      <% end %>
+    </div>
   </div>
-
-  <hr />
-
-<% end %>
+</div>

@@ -1,25 +1,30 @@
-<div class="booyah-box-b col-10 offset-1">
-  <h1 class="text-center">All My Journies</h1>
 
-  <% @trips.each do |trip| %>
-    <h2 class="text-center">
-      <hr />
-      <%= link_to trip.name, trip_path(trip) %>
-    </h2>
-    <br />
-    <div class="row">
-      <div class="col-sm-8 col-12">
-        <%= trip.description %>
-        <br />
-      </div>
-      <div class="col-sm-4 col-12 text-center">
-        <%= link_to 'More Details...', trip_path(trip), class: 'btn btn-primary btn-large' %>
-        <br />
-        <br />
-        <%= link_to 'Administer...', traveler_trip_path(trip), class: 'btn btn-danger btn-large' %>
-      </div>
-      <br class="clr" />
-      <hr />
+  <div class="hero-a booyah-box-b col-10 offset-1">
+    <div class="booyah-box-b frosty col-10 offset-1 text-center">
+      <h1 class="text-center">All My Journies</h1>
+
+      <% @trips.each do |trip| %>
+        <div class="booyah-box-b frosty col-10 offset-1">
+          <h2 class="text-center link-color">
+            <hr />
+            <%= link_to trip.name, trip_path(trip) %>
+          </h2>
+          <br />
+          <div class="row">
+            <div class="col-sm-8 col-12">
+              <%= trip.description %>
+              <br />
+            </div>
+            <div class="col-sm-4 col-12 text-center">
+              <%= link_to 'More Details...', trip_path(trip), class: 'btn btn-primary btn-large' %>
+              <br />
+              <br />
+              <%= link_to 'Administer...', traveler_trip_path(trip), class: 'btn btn-danger btn-large' %>
+            </div>
+          </div>
+          <br class="clr" />
+          <hr />
+        </div>
+      <% end %>
     </div>
-  <% end %>
-</div>
+  </div>

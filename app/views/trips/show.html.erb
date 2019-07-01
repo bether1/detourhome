@@ -1,23 +1,23 @@
-<div class="booyah-box-b col-10 offset-1 text-center">
-  <h1><%= @trip.name %></h1>
-  <hr />
-  <div class="col-sm-8 col-12 offset-2 text-center">
-    <%= @trip.description %>
-  </div>
-  <hr />
-  <h6 class="text-center"><'insert map here with all destinations'></h6>
-  <hr />
-  <ul>
-    <% @trip.destinations.each do |destination| %>
-      <div class="row booyah-box-c col-12 col-sm"> 
-        <h5 class="col-12 text-center"> <%= link_to destination.name, traveler_trip_destination_path(@trip, destination) %></h5>
-      </div>
-        <br />
+<div class="hero-a booyah-box-b col-10 offset-1 text-center">
+  <div class="booyah-box-b frosty col-10 offset-1 text-center">
+    <h1><%= @trip.name %></h1>
+    <hr />
+    <div class="col-sm-8 col-12 offset-2 text-center">
+      <%= @trip.description %>
+    </div>
+    <hr />
+    <h6 class="text-center"><'insert map here with all destinations'></h6>
+    <hr />
+    <ul>
+      <% @trip.destinations.each do |destination| %>
+        <div class="row frosty booyah-box-c col-12 col-sm"> 
+          <h5 class="col-12 text-center"> <%= link_to destination.name, traveler_trip_destination_path(@trip, destination) %></h5>
+        </div>
+      <% end %>
+    </ul>
+    <% if current_user && current_user == @trip.user %>
+      <br />
+      <%= link_to 'Administer', traveler_trip_path(@trip), class: 'btn btn-danger btn-large' %>
     <% end %>
-  </ul>
-  <% if current_user && current_user == @trip.user %>
-    <br />
-    <br />
-    <%= link_to 'Administer', traveler_trip_path(@trip), class: 'btn btn-danger btn-large' %>
-  <% end %>
+  </div>
 </div>
