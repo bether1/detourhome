@@ -6,11 +6,9 @@
       <%= @trip.description %>
     </div>
     <hr />
-    <h6 class="text-center"><'insert map here with all destinations'></h6>
-    <hr />
     <ul>
       <% @trip.destinations.each do |destination| %>
-        <div class="row frosty booyah-box-c col-12 col-sm"> 
+        <div class="row frosty booyah-box-c col-12"> 
           <h5 class="col-12 text-center"> <%= link_to destination.name, traveler_trip_destination_path(@trip, destination) %></h5>
         </div>
       <% end %>

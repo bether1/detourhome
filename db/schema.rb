@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_26_155507) do
+ActiveRecord::Schema.define(version: 2019_07_02_024947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2019_06_26_155507) do
     t.integer "trip_id"
     t.float "latitude"
     t.float "longitude"
-    t.string "photo"
   end
 
   create_table "journals", force: :cascade do |t|

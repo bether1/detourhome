@@ -6,7 +6,6 @@
       <% @trips.each do |trip| %>
         <div class="booyah-box-b frosty col-10 offset-1">
           <h2 class="text-center link-color">
-            <hr />
             <%= link_to trip.name, trip_path(trip) %>
           </h2>
           <br />
@@ -16,14 +15,13 @@
               <br />
             </div>
             <div class="col-sm-4 col-12 text-center">
-              <%= link_to 'More Details...', trip_path(trip), class: 'btn btn-primary btn-large' %>
+              <%= link_to 'More Details', trip_path(trip), class: 'btn btn-primary btn-large' %>
               <br />
               <br />
-              <%= link_to 'Administer...', traveler_trip_path(trip), class: 'btn btn-danger btn-large' %>
+              <%= link_to 'Administer', traveler_trip_path(trip), class: 'btn btn-danger btn-large' %>
             </div>
           </div>
           <br class="clr" />
-          <hr />
         </div>
       <% end %>
     </div>
