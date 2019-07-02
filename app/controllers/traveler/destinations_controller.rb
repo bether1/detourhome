@@ -15,7 +15,6 @@ class Traveler::DestinationsController < ApplicationController
     @destination = Destination.find(params[:id])
     @trip = Trip.find(params[:trip_id])
     @journal = Journal.new
-    @photo = Photo.new
   end
 
 
