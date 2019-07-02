@@ -2,10 +2,9 @@
   <div class="hero-a booyah-box-b col-10 offset-1">
     <div class="booyah-box-b frosty col-10 offset-1 text-center">
       <h1 class="text-center">All My Journies</h1>
-
       <% @trips.each do |trip| %>
-        <div class="booyah-box-b frosty col-10 offset-1">
-          <h2 class="text-center link-color">
+        <div class="booyah-box-b frosty link col-10 offset-1">
+          <h2 class="text-center link">
             <%= link_to trip.name, trip_path(trip) %>
           </h2>
           <br />
