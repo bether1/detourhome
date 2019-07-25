@@ -16,9 +16,6 @@
         <meta name="viewport" content="initial-scale=1.0">
         <meta charset="utf-8">
         <style>
-          /* Always set the map height explicitly to define the size of the div
-           * element that contains the map. */
-          /* Optional: Makes the sample page fill the window. */
           html, body {
             height: 100%;
             margin: 0;
@@ -26,22 +23,9 @@
           }
         </style>
       </head>
-  <body>
-  <!-- this is the html tag where the map that we create below is going to go -->
+      <body>
         <div id="map"></div>
         <script>
-
-
- //below is an example of multiple coordinates.  we want to loop through the destinations and pull the lat/lng from each destination into a coordinate array []
-
-// TODO: delete this stuff once everything is working
-//use the above var coordinates code that's commented out, not the code below with harc coded lat/lng
-// var coordinates = {
-//   lat: -25.344,
-//   lng: 131.036
-// };
-// var coordinatesTwo = {lat: -25.344, lng: 132.036};
-
           var averageCoordinates = {
             lat: <%= @average_coords[:lat] %>,
             lng: <%= @average_coords[:lng] %>
@@ -51,11 +35,9 @@
           function initMap() {
             googleMap = new google.maps.Map(document.getElementById('map'), {
               center: averageCoordinates,
-//check the center syntax.  the @average_coords is pulling the method in the trips controller.  we want that average coords to be where the map centers, not where the pins are.  pins are defined below
               zoom: 6
             });
 
-            //loop through @destinations and add a new marker for each destination
             var marker = {};
             var markerCoordinates = {};
             
@@ -70,12 +52,6 @@
                   map: googleMap
                 });
             <% end %>
-            
-
-            // TODO: delete this stuff once everything is working
-            //don't need two markers here.  just one marker that loops through the destinations.
-          //   var marker = new google.maps.Marker({position: coordinates, map: map});
-          // var markerTwo = new google.maps.Marker({position: coordinatesTwo, map: map});
           }
         </script>
 
@@ -83,8 +59,7 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOE-HGxJJ-LkvmoPg55T4NfiHutZ_fZG0&callback=initMap">
         </script>
       </body>
-      </html>
-    </div>
+    </html>
   </div>
 
 
