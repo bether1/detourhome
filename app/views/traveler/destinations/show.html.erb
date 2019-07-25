@@ -9,8 +9,6 @@
 
 
 
-
-
   <div class="booyah-box-b frosty col-10 offset-1 text-center">
     <!DOCTYPE html>
     <html>
@@ -32,13 +30,19 @@
       <body>
         <div id="map"></div>
         <script>
+          var coordinates = {lat: <%= @destination.latitude %>, lng: <%= @destination.longitude %>};
+//above defines the variable coordinates
           var map;
           function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
-              center: {lat: <%= @destination.latitude %>, lng: <%= @destination.longitude %>},
+              center: coordinates,
               zoom: 8
+//need to look into whether i can remove zoom.  zoom could prevent all markers from appearing
             });
+//builds the map and centers on the coordinates
+          var marker = new google.maps.Marker({position: coordinates, map: map});
           }
+//adds a marker where the coordinate is
         </script>
 
         <script async defer
